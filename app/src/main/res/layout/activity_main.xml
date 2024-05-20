@@ -7,13 +7,89 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="114dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="99dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="104dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Forgetpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/Forgetpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <Button
+        android:id="@+id/butlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="36dp"
+        android:text="Log in"
+        app:layout_constraintStart_toStartOf="@+id/Forgetpassword"
+        app:layout_constraintTop_toBottomOf="@+id/Forgetpassword"
+        app:rippleColor="#87BCD5" />
+
+    <Button
+        android:id="@+id/butsignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Sign Up"
+        app:layout_constraintBaseline_toBaselineOf="@+id/butlogin"
+        app:layout_constraintStart_toEndOf="@+id/Forgetpassword" />
+
+    <TextView
+        android:id="@+id/Forgetpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="269dp"
+        android:text="Forget Password"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/password" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
