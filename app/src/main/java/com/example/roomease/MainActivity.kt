@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         dataBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(dataBinding.root)
 
         dataBinding.background
         dataBinding.logo
@@ -26,8 +27,6 @@ class MainActivity : AppCompatActivity() {
         dataBinding.password
         dataBinding.butlogin
         dataBinding.butsignup
-
-        setContentView(dataBinding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
