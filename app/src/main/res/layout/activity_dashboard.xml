@@ -7,30 +7,159 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigator"
-        android:layout_width="0dp"
-        app:menu="@menu/nav_items"
-        app:labelVisibilityMode="labeled"
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/framelayout"
-        android:layout_width="409dp"
-        android:layout_height="649dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigator"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
 
-    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="230dp">
+
+        <ImageView
+            android:id="@+id/flight"
+            android:layout_width="58dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/plane" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="230dp">
+
+        <ImageView
+            android:id="@+id/hotel"
+            android:layout_width="76dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/hotel" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="230dp">
+
+        <ImageView
+            android:id="@+id/resturant"
+            android:layout_width="78dp"
+            android:layout_marginTop="8dp"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/dinner" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="230dp">
+
+        <ImageView
+            android:id="@+id/rent"
+            android:layout_width="72dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/carrent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="326dp">
+
+        <ImageView
+            android:id="@+id/guide"
+            android:layout_width="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/guide" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="326dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/bus" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="326dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="68dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="14dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/financial" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="87dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="326dp">
+
+        <ImageView
+            android:id="@+id/rating"
+            android:layout_width="77dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/feedback" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="379dp"
+        android:layout_height="270dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="435dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
