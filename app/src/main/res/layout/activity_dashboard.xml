@@ -7,16 +7,53 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
+
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="413dp"
+        android:layout_height="728dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
+    <LinearLayout
+        android:layout_width="178dp"
+        android:layout_height="36dp"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="38dp">
+
+        <TextView
+            android:id="@+id/textwelcome"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:textColor="@color/grey"
+            android:text="Welcome Back"
+            android:textSize="25dp"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="38dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/user"
+        android:layout_width="64dp"
+        android:layout_height="52dp"
+        android:src="@drawable/user"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="92dp" />
+
+    <ImageView
+        android:id="@+id/notification"
+        android:layout_width="36dp"
+        android:layout_height="38dp"
+        android:src="@drawable/bell"
+        tools:layout_editor_absoluteX="342dp"
+        tools:layout_editor_absoluteY="36dp" />
 
     <LinearLayout
         android:layout_width="87dp"
@@ -156,10 +193,10 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="379dp"
-        android:layout_height="270dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="435dp"/>
+        android:layout_width="340dp"
+        android:layout_height="243dp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="419dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
