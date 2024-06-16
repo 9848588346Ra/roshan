@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.TintableCompoundButton
+import com.example.roomease.R
 import java.util.Calendar
 
 class DateActivity : AppCompatActivity() {
@@ -19,9 +20,9 @@ class DateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_date)
+        setContentView(R.layout.activity_booking_page)
         button = findViewById(R.id.calendar)
-        textView = findViewById(R.id.textView12)
+        textView = findViewById(R.id.textview12)
 
         button.setOnClickListener {
             loadCalendar()
