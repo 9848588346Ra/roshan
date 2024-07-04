@@ -1,37 +1,52 @@
 package com.example.roomease
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.roomease.databinding.ActivityMainBinding
+import com.example.roomease.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
-class MainActivity : AppCompatActivity() {
-    lateinit var dataBinding: ActivityMainBinding
+class LoginActivity : AppCompatActivity() {
+    private lateinit var loginBinding: ActivityLoginBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        loginBinding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(loginBinding.root)
 
-        dataBinding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(dataBinding.root)
+        auth = FirebaseAuth.getInstance()
 
-        dataBinding.background
-        dataBinding.logo
-        dataBinding.username
-        dataBinding.Forgetpassword
-        dataBinding.password
-        dataBinding.butlogin
-        dataBinding.butsignup
+        loginBinding.butlogin.setOnClickListener {
+            val email = loginBinding.username.text.toString().trim()
+            val password = loginBinding.password.text.toString().trim()
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            loginUser(email, password)
         }
+
+        // Navigate to SignupActivity when signupButton is clicked
+        loginBinding.butsignup.setOnClickListener {
+            val intent = Intent(this@LoginActivity, Signup::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun loginUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Login successful", Toast.LENGTH_LONG).show()
+                    navigateToDashboard()
+                } else {
+                    Toast.makeText(applicationContext, "Authentication failed", Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
+    private fun navigateToDashboard() {
+        val intent = Intent(this,DashboardActivity::class.java)
+        startActivity(intent)
+        finish()  // Optional: finish current activity if you don't want to go back to it
     }
 }

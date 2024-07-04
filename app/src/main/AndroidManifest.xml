@@ -13,17 +13,31 @@
         android:theme="@style/Theme.RoomEase"
         tools:targetApi="31">
         <activity
+            android:name="newLogin.signupActivity2"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".GuideActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".BusSchedule"
-            android:exported="false" />
+            android:exported="true" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true" />
         <activity
             android:name=".reviewsandrating2"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Reviewsandrating"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".BookingPage"
             android:exported="true">
@@ -61,7 +75,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
