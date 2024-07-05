@@ -12,19 +12,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/Sky" />
+        app:srcCompat="@drawable/skiess"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="47dp" />
 
     <Button
         android:id="@+id/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calendar"
-        tools:layout_editor_absoluteX="264dp"
-        tools:layout_editor_absoluteY="105dp" />
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="93dp" />
 
     <TextView
         android:id="@+id/textview12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="149dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
