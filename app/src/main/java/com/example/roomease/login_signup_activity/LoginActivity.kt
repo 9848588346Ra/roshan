@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.roomease.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginBinding: ActivityLoginBinding
@@ -22,12 +24,20 @@ class LoginActivity : AppCompatActivity() {
             val email = loginBinding.username.text.toString().trim()
             val password = loginBinding.password.text.toString().trim()
 
-            loginUser(email, password)
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                loginUser(email, password)
+            } else {
+                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        // Navigate to SignupActivity when signupButton is clicked
         loginBinding.butsignup.setOnClickListener {
             val intent = Intent(this@LoginActivity, Signup::class.java)
+            startActivity(intent)
+        }
+
+        loginBinding.Forgetpassword.setOnClickListener {
+            val intent = Intent(this@LoginActivity, ForgetPasswordActivity::class.java)
             startActivity(intent)
         }
     }
@@ -39,14 +49,28 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Login successful", Toast.LENGTH_LONG).show()
                     navigateToDashboard()
                 } else {
-                    Toast.makeText(applicationContext, "Authentication failed", Toast.LENGTH_LONG).show()
+                    handleLoginError(task.exception)
                 }
             }
     }
 
+    private fun handleLoginError(exception: Exception?) {
+        when (exception) {
+            is FirebaseAuthInvalidCredentialsException -> {
+                Toast.makeText(applicationContext, "Invalid credentials: ${exception.message}", Toast.LENGTH_LONG).show()
+            }
+            is FirebaseAuthInvalidUserException -> {
+                Toast.makeText(applicationContext, "No account found with this email: ${exception.message}", Toast.LENGTH_LONG).show()
+            }
+            else -> {
+                Toast.makeText(applicationContext, "Authentication failed: ${exception?.message}", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
     private fun navigateToDashboard() {
-        val intent = Intent(this,DashboardActivity::class.java)
+        val intent = Intent(this, FlightBooking::class.java)
         startActivity(intent)
-        finish()  // Optional: finish current activity if you don't want to go back to it
+        finish()
     }
 }
